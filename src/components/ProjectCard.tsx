@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
         
         <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
-          <span className="text-amber-400 text-sm font-medium mb-2">{category}</span>
+          <span className="text-white text-m font-medium mb-2">{category}</span>
           <h3 className="text-2xl font-bold mb-2 group-hover:text-amber-300 transition-colors duration-300">{title}</h3>
           <p className="text-white/80 mb-4 line-clamp-2">{description}</p>
           

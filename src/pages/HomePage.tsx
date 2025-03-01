@@ -31,14 +31,53 @@ import ProjectCard from '../components/ProjectCard';
       }
     ]
   }
+  
 ]
 
+const interiorDesign =[ 
 
+      "Room Interior Design with 2D & 3D Planning",
+      "Interior Vastu According To Direction & Requirements",
+       "Window & Doors (Manufacturing & Installation)",
+      "LED Units, Washroom Vanity, Almirah",
+      "Renovation (Old To Modern Home With Vastu)"
+  ]
 
+  const homeAutomation= [
+    "Control Your Home Anytime - Anywhere",
+    "Authorized Distributor of Leccy & Genesis USA Products",
+    "Full Control of Appliances from Anywhere in the World",
+    "Smart & Secure Home Automation",
+    "Control And Manage Lights, Fans, Switches, Curtains, AC, Geyser, Washing Machines & More Remotely",
+]
 
+const _2d_3d= [
 
+  "2D & 3D Design, Planning & Budget",
+            "2D & 3D Drawing Before Booking",
+            "Budget According to Drawings",
+            "Customisation According to Space & Requirements"
+]
 
+const guarantee=[
+{
+  title: "Guarantee & Warranty and After Service",
+  subtitles: [{
 
+      text1:"Termite (ਸਿਉਂਕ) & Borer Proof (Lifetime Warranty)",
+      text2:"5 Year Warranty on Accessories"},
+      {
+          text: "Having Dealership Of:",
+          nestedItems: [
+              "EBCO (Kitchen Accessories)",
+              "ELICA (Hob & Chimney)",
+              "LECCY & GENESIS (Smart Door Lock & Switches)",
+          ]
+      }
+  ]
+}
+
+]
 
 
 
@@ -61,23 +100,23 @@ import ProjectCard from '../components/ProjectCard';
 const featuredProjects = [
   {
     id: 'modern-kitchen-makeover',
-    title: 'Modern Kitchen Makeover',
+    title: 'Modular Kitchen Makeover',
     category: 'Modular Kitchen',
     image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    description: 'Complete transformation of an outdated kitchen into a modern culinary haven with smart appliances and premium finishes.'
+    description: 'Complete transformation of an outdated kitchen into a modern modular kitchen.'
   },
   {
     id: 'luxury-apartment-interior',
-    title: 'Luxury Apartment Interior',
+    title: 'Room Interior Design',
     category: 'Interior Design',
     image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    description: 'Bespoke interior design for a high-end apartment with custom furniture and elegant finishes.'
+    description: ' Interior design according to requirement with custom furniture  finishes.'
   },
   {
     id: 'smart-home-integration',
-    title: 'Complete Smart Home Integration',
+    title: 'Complete Smart Home Automation',
     category: 'Home Automation',
-    image: 'https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/homeautomation-home-vipkitchen.JPG?updatedAt=1740842381750',
     description: 'Comprehensive home automation system with integrated lighting, security, and appliance control.'
   }
 ];
@@ -192,49 +231,17 @@ const HomePage = () => {
 
 
                   <ul className="space-y-3 mb-8">
-        {modularKitchen.map((item, index) => (
+        {interiorDesign.map((item, index) => (
 
             <li key={index} className="mb-4">
             
-             {/* Subtitles */}
-            <ul className="ml-6 mt-2 space-y-1">
-              {item.subtitles.map((e, eindex) => (
-                <React.Fragment key={eindex}>
-                  {/* If object contains text1 & text2 */}
-                  {"text1" in e && "text2" in e ? (
-                    <>
-                      <li className="flex items-start">
               <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+              <span>{item}</span>
 
-                        <span>{e.text1}</span>
                       </li>
-                      <li className="flex items-start">
-                      <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-
-                        <span>{e.text2}</span>
-                      </li>
-                    </>
-                  ) : (
-                    // If object contains text & nestedItems
-                    <li className="mt-2">
-                      <span className="font-medium">{e.text}</span>
-                      <ul className="ml-6 mt-1 space-y-1">
-                        {e.nestedItems.map((nestedItem, nestedIndex) => (
-                          <li key={nestedIndex} className="flex items-start">
-                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-
-                            <span>{nestedItem}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  )}
-                </React.Fragment>
-              ))}
-            </ul>
-          </li>
         ))}
-      </ul>
+                </ul>
+         
               
 
                 <Link 
@@ -259,50 +266,21 @@ const HomePage = () => {
                 <p className="text-gray-600 mb-6">
                   Cutting-edge home automation solutions for a smarter, more convenient living experience.
                 </p>
+
                 <ul className="space-y-3 mb-8">
-        {modularKitchen.map((item, index) => (
+        {homeAutomation.map((item, index) => (
 
             <li key={index} className="mb-4">
             
-             {/* Subtitles */}
-            <ul className="ml-6 mt-2 space-y-1">
-              {item.subtitles.map((e, eindex) => (
-                <React.Fragment key={eindex}>
-                  {/* If object contains text1 & text2 */}
-                  {"text1" in e && "text2" in e ? (
-                    <>
-                      <li className="flex items-start">
               <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+              <span>{item}</span>
 
-                        <span>{e.text1}</span>
                       </li>
-                      <li className="flex items-start">
-                      <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-
-                        <span>{e.text2}</span>
-                      </li>
-                    </>
-                  ) : (
-                    // If object contains text & nestedItems
-                    <li className="mt-2">
-                      <span className="font-medium">{e.text}</span>
-                      <ul className="ml-6 mt-1 space-y-1">
-                        {e.nestedItems.map((nestedItem, nestedIndex) => (
-                          <li key={nestedIndex} className="flex items-start">
-                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-
-                            <span>{nestedItem}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  )}
-                </React.Fragment>
-              ))}
-            </ul>
-          </li>
         ))}
-      </ul>
+                </ul>
+
+
+
                 <Link 
                   to="/home-automation"
                   className="inline-flex items-center text-amber-600 hover:text-amber-700 transition-colors duration-300"
@@ -327,49 +305,16 @@ const HomePage = () => {
                   Cutting-edge home automation solutions for a smarter, more convenient living experience.
                 </p>
                 <ul className="space-y-3 mb-8">
-        {modularKitchen.map((item, index) => (
+        {_2d_3d.map((item, index) => (
 
             <li key={index} className="mb-4">
             
-             {/* Subtitles */}
-            <ul className="ml-6 mt-2 space-y-1">
-              {item.subtitles.map((e, eindex) => (
-                <React.Fragment key={eindex}>
-                  {/* If object contains text1 & text2 */}
-                  {"text1" in e && "text2" in e ? (
-                    <>
-                      <li className="flex items-start">
               <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+              <span>{item}</span>
 
-                        <span>{e.text1}</span>
                       </li>
-                      <li className="flex items-start">
-                      <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-
-                        <span>{e.text2}</span>
-                      </li>
-                    </>
-                  ) : (
-                    // If object contains text & nestedItems
-                    <li className="mt-2">
-                      <span className="font-medium">{e.text}</span>
-                      <ul className="ml-6 mt-1 space-y-1">
-                        {e.nestedItems.map((nestedItem, nestedIndex) => (
-                          <li key={nestedIndex} className="flex items-start">
-                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-
-                            <span>{nestedItem}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  )}
-                </React.Fragment>
-              ))}
-            </ul>
-          </li>
         ))}
-      </ul>
+                </ul>
                 <Link 
                   to="/home-automation"
                   className="inline-flex items-center text-amber-600 hover:text-amber-700 transition-colors duration-300"
@@ -396,7 +341,7 @@ const HomePage = () => {
                   Cutting-edge home automation solutions for a smarter, more convenient living experience.
                 </p>
                 <ul className="space-y-3 mb-8">
-        {modularKitchen.map((item, index) => (
+        {guarantee.map((item, index) => (
 
             <li key={index} className="mb-4">
             
@@ -522,7 +467,7 @@ const HomePage = () => {
               <div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
                 <p className="text-xl text-gray-600 max-w-2xl">
-                  Explore our showcase of premium kitchens, interiors, and smart home installations.
+                  Explore our showcase of Designer kitchens, interiors, and smart home installations.
                 </p>
               </div>
               <Link 
