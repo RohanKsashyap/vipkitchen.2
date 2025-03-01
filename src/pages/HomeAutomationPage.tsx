@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Smartphone, Lightbulb, Lock, Thermometer, Speaker, Shield } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
@@ -137,6 +137,7 @@ const HomeAutomationPage = () => {
             <AnimatedSection direction="right" className="lg:w-1/2">
               <div className="relative">
                 <img 
+                
                   src="https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
                   alt="Smart Home Automation" 
                   className="rounded-lg shadow-2xl"

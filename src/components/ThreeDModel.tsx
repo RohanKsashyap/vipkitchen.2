@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment, PresentationControls } from '@react-three/drei';
+import React, { useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import {   Environment, PresentationControls } from '@react-three/drei';
 import { Mesh } from 'three';
 import { useInView } from 'react-intersection-observer';
 

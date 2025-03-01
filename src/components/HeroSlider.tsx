@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
@@ -14,25 +14,67 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: "Premium Modular Kitchens",
-    subtitle: "Lifetime warranty with premium materials and expert craftsmanship",
+    title: "Modular Kitchens",
+    subtitle: "Kicthen Manufacturing & Installation (Lifetime Warranty)",
+
+
+
+
+
     image: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
     link: "/modular-kitchens"
   },
   {
     id: 2,
-    title: "Luxury Interior Design",
-    subtitle: "Transform your space with our bespoke interior design solutions",
+    title: " Interior Design",
+    subtitle: "Room Interior Design with 2D & 3D Planning",
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
     link: "/interior-designing"
   },
   {
     id: 3,
     title: "Smart Home Automation",
-    subtitle: "Control your entire home from anywhere with cutting-edge technology",
-    image: "https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    subtitle: "Control Your Home Anytime - Anywhere",
+    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    link: "/home-automation"
+  },
+  {
+    id: 4,
+    title: "2D & 3D Design",
+    subtitle: "Customisation According to Space & Requirements",
+    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    link: "/home-automation"
+  },
+  {
+    id: 5,
+    title: "Guarantee & Warranty and After Service",
+    subtitle: "Termite (ਸਿਉਂਕ) & Borer Proof (Lifetime Warranty)",
+    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "/home-automation"
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 
 const HeroSlider = () => {
@@ -82,7 +124,7 @@ const HeroSlider = () => {
         .to(title, { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out" }, 0)
         .to(subtitle, { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out" }, 0.2)
         .to(button, { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out" }, 0.4)
-        .to({}, { duration: 4 }) // Hold for 4 seconds
+        .to({}, { duration: 2 }) // Hold for 4 seconds
         .to([title, subtitle, button], { y: -50, autoAlpha: 0, duration: 0.7, ease: "power3.in" })
         .to(slide, { scale: 1.1, duration: 1.5, ease: "power3.in" }, "-=0.7")
       );

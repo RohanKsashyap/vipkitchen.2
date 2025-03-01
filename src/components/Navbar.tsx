@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChefHat, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -47,10 +47,24 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center ">
           <Link to="/" className="flex items-center">
-            <ChefHat className={`mr-2 transition-colors duration-300 ${scrolled || location.pathname !== '/' ? 'text-amber-600' : 'text-white'}`} size={32} />
-            <span className={`text-2xl font-bold transition-colors duration-300 ${scrolled || location.pathname !== '/' ? 'text-amber-800' : 'text-white'}`}>VIP Kitchen</span>
+
+
+{/* logo vipKitchen */}
+
+            <img 
+            alt="Vip Kitchen"
+                src="/logo/logo.jpg"
+                width={70}
+                height={80}
+                className="rounded-lg shadow-md "
+            
+            
+            />
+
+
+            <span className={`text-2xl font-bold transition-colors duration-300 ${scrolled || location.pathname !== '/' ? 'text-amber-800' : 'text-white'}`}>VIP Kitchen & Interiors</span>
           </Link>
           
           {/* Desktop Menu */}

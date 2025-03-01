@@ -1,10 +1,62 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 import { ArrowRight, CheckCircle2, ChefHat, Home, Lightbulb } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import AnimatedSection from '../components/AnimatedSection';
 import ThreeDModel from '../components/ThreeDModel';
 import ProjectCard from '../components/ProjectCard';
+
+
+// modular kithchen data
+
+
+ const modularKitchen= [
+  {
+    title: "Modular Kitchens",
+    subtitles: [
+      {
+        text1: "Kitchen Manufacturing & Installation (Lifetime Warranty)",
+        text2: "2D & 3D Interior Designing"
+      },
+      {
+        text: "Including Other Works In Kitchen:",
+        nestedItems: [
+          "Granite Tiles (Installation)",
+          "Sink",
+          "Hob & Chimney (Installation)",
+          "Undersink Filter",
+          "Lightings in Kitchen",
+          "Breakfast Counter"
+        ]
+      }
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//featured projects
 
 const featuredProjects = [
   {
@@ -48,6 +100,8 @@ const HomePage = () => {
               </p>
             </div>
           </AnimatedSection>
+
+          {/* modular kitchens */}
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimatedSection delay={0.1} direction="up">
@@ -55,45 +109,134 @@ const HomePage = () => {
                 <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
                   <ChefHat className="text-amber-600" size={32} />
                 </div>
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Modular Kitchens</h3>
                 <p className="text-gray-600 mb-6">
                   Premium modular kitchens with lifetime warranty, custom designs, and high-quality materials.
                 </p>
+
+
+
+
                 <ul className="space-y-3 mb-8">
-                  {['Lifetime Warranty', 'Premium Materials', 'Custom Designs', 'Smart Integration'].map((item, index) => (
-                    <li key={index} className="flex items-start">
+        {modularKitchen.map((item, index) => (
+
+            <li key={index} className="mb-4">
+            
+             {/* Subtitles */}
+            <ul className="ml-6 mt-2 space-y-1">
+              {item.subtitles.map((e, eindex) => (
+                <React.Fragment key={eindex}>
+                  {/* If object contains text1 & text2 */}
+                  {"text1" in e && "text2" in e ? (
+                    <>
+                      <li className="flex items-start">
+              <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                        <span>{e.text1}</span>
+                      </li>
+                      <li className="flex items-start">
                       <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-                      <span>{item}</span>
+
+                        <span>{e.text2}</span>
+                      </li>
+                    </>
+                  ) : (
+                    // If object contains text & nestedItems
+                    <li className="mt-2">
+                      <span className="font-bold">{e.text}</span>
+                      <ul className="ml-6 mt-1 space-y-1">
+                        {e.nestedItems.map((nestedItem, nestedIndex) => (
+                          <li key={nestedIndex} className="flex items-start">
+                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                            <span>{nestedItem}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
-                  ))}
-                </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+
                 <Link 
                   to="/modular-kitchens"
                   className="inline-flex items-center text-amber-600 hover:text-amber-700 transition-colors duration-300"
                 >
+
+          
                   <span>Explore Modular Kitchens</span>
                   <ArrowRight size={16} className="ml-2" />
                 </Link>
               </div>
             </AnimatedSection>
             
+
+                    {/* interior designing */}
+
+
             <AnimatedSection delay={0.2} direction="up">
               <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
                   <Home className="text-amber-600" size={32} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Interior Designing</h3>
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Interior Designing</h3>
                 <p className="text-gray-600 mb-6">
                   Comprehensive interior design solutions with 2D & 3D planning and Vastu-based designs.
                 </p>
-                <ul className="space-y-3 mb-8">
-                  {['2D & 3D Planning', 'Vastu Compliance', 'Custom Furniture', 'Complete Renovation'].map((item, index) => (
-                    <li key={index} className="flex items-start">
+
+
+                  <ul className="space-y-3 mb-8">
+        {modularKitchen.map((item, index) => (
+
+            <li key={index} className="mb-4">
+            
+             {/* Subtitles */}
+            <ul className="ml-6 mt-2 space-y-1">
+              {item.subtitles.map((e, eindex) => (
+                <React.Fragment key={eindex}>
+                  {/* If object contains text1 & text2 */}
+                  {"text1" in e && "text2" in e ? (
+                    <>
+                      <li className="flex items-start">
+              <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                        <span>{e.text1}</span>
+                      </li>
+                      <li className="flex items-start">
                       <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-                      <span>{item}</span>
+
+                        <span>{e.text2}</span>
+                      </li>
+                    </>
+                  ) : (
+                    // If object contains text & nestedItems
+                    <li className="mt-2">
+                      <span className="font-medium">{e.text}</span>
+                      <ul className="ml-6 mt-1 space-y-1">
+                        {e.nestedItems.map((nestedItem, nestedIndex) => (
+                          <li key={nestedIndex} className="flex items-start">
+                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                            <span>{nestedItem}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
-                  ))}
-                </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+              
+
                 <Link 
                   to="/interior-designing"
                   className="inline-flex items-center text-amber-600 hover:text-amber-700 transition-colors duration-300"
@@ -103,24 +246,63 @@ const HomePage = () => {
                 </Link>
               </div>
             </AnimatedSection>
+
+            {/* home automation */}
             
             <AnimatedSection delay={0.3} direction="up">
               <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
                   <Lightbulb className="text-amber-600" size={32} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Home Automation</h3>
+
+               <h3 className="text-2xl font-bold text-gray-900 mb-4">Home Automation</h3>
                 <p className="text-gray-600 mb-6">
                   Cutting-edge home automation solutions for a smarter, more convenient living experience.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {['Smart Controls', 'Remote Access', 'Energy Efficient', 'Security Integration'].map((item, index) => (
-                    <li key={index} className="flex items-start">
+        {modularKitchen.map((item, index) => (
+
+            <li key={index} className="mb-4">
+            
+             {/* Subtitles */}
+            <ul className="ml-6 mt-2 space-y-1">
+              {item.subtitles.map((e, eindex) => (
+                <React.Fragment key={eindex}>
+                  {/* If object contains text1 & text2 */}
+                  {"text1" in e && "text2" in e ? (
+                    <>
+                      <li className="flex items-start">
+              <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                        <span>{e.text1}</span>
+                      </li>
+                      <li className="flex items-start">
                       <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
-                      <span>{item}</span>
+
+                        <span>{e.text2}</span>
+                      </li>
+                    </>
+                  ) : (
+                    // If object contains text & nestedItems
+                    <li className="mt-2">
+                      <span className="font-medium">{e.text}</span>
+                      <ul className="ml-6 mt-1 space-y-1">
+                        {e.nestedItems.map((nestedItem, nestedIndex) => (
+                          <li key={nestedIndex} className="flex items-start">
+                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                            <span>{nestedItem}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
-                  ))}
-                </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
                 <Link 
                   to="/home-automation"
                   className="inline-flex items-center text-amber-600 hover:text-amber-700 transition-colors duration-300"
@@ -130,9 +312,152 @@ const HomePage = () => {
                 </Link>
               </div>
             </AnimatedSection>
+
+           {/* 2d & 3d design */}
+
+
+<AnimatedSection delay={0.3} direction="up">
+              <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                  <Lightbulb className="text-amber-600" size={32} />
+                </div>
+
+               <h3 className="text-2xl font-bold text-gray-900 mb-4">2D & 3D Design</h3>
+                <p className="text-gray-600 mb-6">
+                  Cutting-edge home automation solutions for a smarter, more convenient living experience.
+                </p>
+                <ul className="space-y-3 mb-8">
+        {modularKitchen.map((item, index) => (
+
+            <li key={index} className="mb-4">
+            
+             {/* Subtitles */}
+            <ul className="ml-6 mt-2 space-y-1">
+              {item.subtitles.map((e, eindex) => (
+                <React.Fragment key={eindex}>
+                  {/* If object contains text1 & text2 */}
+                  {"text1" in e && "text2" in e ? (
+                    <>
+                      <li className="flex items-start">
+              <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                        <span>{e.text1}</span>
+                      </li>
+                      <li className="flex items-start">
+                      <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                        <span>{e.text2}</span>
+                      </li>
+                    </>
+                  ) : (
+                    // If object contains text & nestedItems
+                    <li className="mt-2">
+                      <span className="font-medium">{e.text}</span>
+                      <ul className="ml-6 mt-1 space-y-1">
+                        {e.nestedItems.map((nestedItem, nestedIndex) => (
+                          <li key={nestedIndex} className="flex items-start">
+                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                            <span>{nestedItem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+                <Link 
+                  to="/home-automation"
+                  className="inline-flex items-center text-amber-600 hover:text-amber-700 transition-colors duration-300"
+                >
+                  <span>Explore Home Automation</span>
+                  <ArrowRight size={16} className="ml-2" />
+                </Link>
+              </div>
+            </AnimatedSection>
+
+
+
+            {/* guaranntee */}
+
+
+            <AnimatedSection delay={0.3} direction="up">
+              <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                  <Lightbulb className="text-amber-600" size={32} />
+                </div>
+
+               <h3 className="text-2xl font-bold text-gray-900 mb-4">Guarantee & Warranty and After Service</h3>
+                <p className="text-gray-600 mb-6">
+                  Cutting-edge home automation solutions for a smarter, more convenient living experience.
+                </p>
+                <ul className="space-y-3 mb-8">
+        {modularKitchen.map((item, index) => (
+
+            <li key={index} className="mb-4">
+            
+             {/* Subtitles */}
+            <ul className="ml-6 mt-2 space-y-1">
+              {item.subtitles.map((e, eindex) => (
+                <React.Fragment key={eindex}>
+                  {/* If object contains text1 & text2 */}
+                  {"text1" in e && "text2" in e ? (
+                    <>
+                      <li className="flex items-start">
+              <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                        <span>{e.text1}</span>
+                      </li>
+                      <li className="flex items-start">
+                      <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                        <span>{e.text2}</span>
+                      </li>
+                    </>
+                  ) : (
+                    // If object contains text & nestedItems
+                    <li className="mt-2">
+                      <span className="font-medium">{e.text}</span>
+                      <ul className="ml-6 mt-1 space-y-1">
+                        {e.nestedItems.map((nestedItem, nestedIndex) => (
+                          <li key={nestedIndex} className="flex items-start">
+                                          <CheckCircle2 className="text-amber-600 mr-2 mt-1 flex-shrink-0" size={18} />
+
+                            <span>{nestedItem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+                <Link 
+                  to="/home-automation"
+                  className="inline-flex items-center text-amber-600 hover:text-amber-700 transition-colors duration-300"
+                >
+                  <span>Explore Home Automation</span>
+                  <ArrowRight size={16} className="ml-2" />
+                </Link>
+              </div>
+            </AnimatedSection>
+
           </div>
         </div>
-      </section>
+
+ </section>
+
+
+      
+
+
       
       {/* 3D Interactive Section */}
       <section className="py-20 bg-gray-50">
