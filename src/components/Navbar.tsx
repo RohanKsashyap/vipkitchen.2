@@ -55,7 +55,7 @@ const Navbar = () => {
 
             <img 
             alt="Vip Kitchen"
-                src="/logo/logo.jpg"
+                src="https://ik.imagekit.io/rohanKashyap/logo.jpg?updatedAt=1740838077627"
                 width={70}
                 height={80}
                 className="rounded-lg shadow-md "
