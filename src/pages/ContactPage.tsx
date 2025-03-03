@@ -1,8 +1,36 @@
-import React from 'react';
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const ContactPage = () => {
+
+
+
+  const locations = [
+    {
+        title: "VIP Kitchen & Interiors",
+        address: "Nawanshahr Road, near Petrol Pump, Garhshankar, Punjab 144527",
+        mapSrc: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d853.0847873095261!2d76.14481926952875!3d31.21133199839732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDEyJzQwLjgiTiA3NsKwMDgnNDMuNyJF!5e0!3m2!1sen!2sin!4v1741014125286!5m2!1sen!2sin" 
+    }
+];
+
+
+
+
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -30,7 +58,7 @@ const ContactPage = () => {
                         type="text" 
                         id="name" 
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
-                        placeholder="John Doe"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -39,7 +67,7 @@ const ContactPage = () => {
                         type="tel" 
                         id="phone" 
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="Your Number"
                       />
                     </div>
                   </div>
@@ -97,8 +125,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
-                      <p className="text-gray-600">+1 (555) 987-6543</p>
+                      <p className="text-gray-600">+91 70093-50717</p>
                     </div>
                   </div>
                   
@@ -119,11 +146,11 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                      <p className="text-gray-600">
-                        123 Culinary Street<br />
-                        Foodville, FC 12345<br />
-                        India
-                      </p>
+                      Nawanshahr Road,<br />
+                  Near Petrol Pump<br />
+                  Garhshankar,144527,District-Hoshiarpur,Punjab-India
+
+
                     </div>
                   </div>
                   
@@ -133,9 +160,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                      <p className="text-gray-600">Monday - Friday: 10AM - 7PM</p>
-                      <p className="text-gray-600">Saturday: 10AM - 6PM</p>
-                      <p className="text-gray-600">Sunday: By Appointment</p>
+                      <p className="text-gray-600">Monday - Sunday:9am-8pm</p>
                     </div>
                   </div>
                 </div>
@@ -144,7 +169,7 @@ const ContactPage = () => {
                   <h3 className="font-semibold text-gray-900 mb-4">Connect With Us</h3>
                   <div className="flex gap-4">
                     <a 
-                      href="https://wa.me/15551234567" 
+                      href="https://wa.me/917009350717?text=Hello%20there!%20I%20found%20you%20on%20your%20website" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
@@ -153,7 +178,7 @@ const ContactPage = () => {
                       <span>WhatsApp</span>
                     </a>
                     <a 
-                      href="tel:+15551234567"
+                      href="tel:+91 70093-50717"
                       className="flex items-center gap-2 bg-amber-600 text-white py-2 px-4 rounded-md hover:bg-amber-700 transition duration-300"
                     >
                       <Phone size={18} />
@@ -179,17 +204,41 @@ const ContactPage = () => {
             </div>
           </AnimatedSection>
           
+       
+
+
+
+
+
           <AnimatedSection>
-            <div className="rounded-xl overflow-hidden shadow-lg h-[500px] bg-gray-200">
-              {/* This would be replaced with an actual Google Maps embed */}
-              <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                <div className="text-center">
-                  <MapPin size={48} className="text-amber-600 mx-auto mb-4" />
-                  <p className="text-gray-600">Google Maps would be embedded here</p>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
+  <div className="w-full h-screen flex flex-col">
+    {/* Title */}
+    <div className="text-center p-6 bg-white-200 shadow-md z-10 rounded">
+      <MapPin size={48} className="text-amber-600 mx-auto mb-4" />
+      <h2 className="text-2xl font-bold text-gray-800">Find Us</h2>
+      <h2 className='text-amber-600 mx-auto mb-4 font-bold'>{locations[0].title}</h2>
+      <h2 className='text-amber-600 mx-auto mb-4 font-bold'>{locations[0].address}</h2>
+    </div>
+
+    {/* Full Map */}
+    <div className="flex-grow relative">
+      <iframe
+        src={locations[0].mapSrc}
+        className="absolute inset-0 w-full h-full rounded"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+  </div>
+</AnimatedSection>
+
+
+
+
+
+
         </div>
       </section>
       
@@ -209,11 +258,11 @@ const ContactPage = () => {
             {[
               {
                 question: "What areas do you serve?",
-                answer: "We currently serve major cities across India, including Delhi, Mumbai, Bangalore, and surrounding areas. Contact us to check if we serve your specific location."
+                answer: "We currently serve major cities across Punjab and surrounding areas. Contact us to check if we serve your specific location."
               },
               {
                 question: "Do you offer free consultations?",
-                answer: "Yes, we offer free initial consultations to discuss your project requirements and provide preliminary design ideas and cost estimates."
+                answer: "Yes, we offer free initial consultations to discuss your project requirements and provide starting design ideas and cost estimates."
               },
               {
                 question: "What is the typical timeline for a kitchen renovation?",

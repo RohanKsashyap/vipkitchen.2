@@ -132,7 +132,7 @@ const Footer = () => {
                   </a>
                 </a>
                 <a href="#" className="bg-gray-800 p-2 rounded-full text-white hover:bg-amber-600 transition duration-300">
-                <a href="https://wa.me/917009350717?text=Hello%20there!%20I%20found%20you%20on%20your%20website.
+                <a href="https://wa.me/917009350717?text=Hello%20there!%20I%20found%20you%20on%20your%20website
 ">
                 <MessageCircle size={20}  />
 

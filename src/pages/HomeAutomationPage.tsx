@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Smartphone, Lightbulb, Lock, Thermometer, Shield } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { motion } from 'framer-motion';
+import { brands } from './ModularKitchensPage';
 
 const automationFeatures = [
   {
@@ -34,10 +35,10 @@ const automationFeatures = [
 ];
 
 const HomeAutomationPage = () => {
-  const [activeTab, setActiveTab] = useState('lighting');
+  const [activeTab, setActiveTab] = useState('Smart Lightings');
   
   const tabContent = {
-    lighting: {
+   "Smart Lightings": {
       title: "Smart Lighting Solutions",
       description: "Transform your home with intelligent lighting that responds to your lifestyle. Control brightness, color, and scheduling from your smartphone or voice commands.",
       features: [
@@ -48,46 +49,47 @@ const HomeAutomationPage = () => {
         "Energy usage monitoring",
         "Integration with other smart devices"
       ],
-      image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/rohanKashyap/smartLightings?updatedAt=1741009898325"
     },
-    security: {
+    "Smart Door Locks": {
       title: "Smart Security Systems",
-      description: "Keep your home safe with advanced security features that provide peace of mind whether you're home or away. Monitor and control your security system remotely.",
+      description: "Smart Door lock :-The Smart Door lock is equipped with the best security mechanisms to increase protection inside your home. This Smart Door Lock is built with the latest German technology..",
       features: [
-        "HD security cameras with night vision",
+        "Anti-theft alarm",
         "Smart door locks with keyless entry",
-        "Motion and entry sensors",
+        "Compatible with Google home & Amazon alexa",
         "Real-time alerts and notifications",
         "Remote monitoring and control",
-        "Video doorbell with two-way audio"
+        "Low Battery Alarm"
       ],
-      image: "https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/rohanKashyap/chor.jpg?updatedAt=1741002656426"
     },
-    climate: {
-      title: "Climate Control Systems",
-      description: "Optimize your home's comfort and energy efficiency with smart climate control. Adjust temperature settings remotely and create personalized comfort schedules.",
+    "Doorbell Cameras": {
+      title: "Doorbell Camera",
+      description: "Smart Video Doorbell:-Smart Video Doorbell is designed using the latest German technology that fits Indian standards.",
       features: [
-        "Smart thermostats with learning capabilities",
-        "Zone-based temperature control",
-        "Energy usage analytics and optimization",
-        "Automated scheduling based on occupancy",
-        "Integration with weather forecasts",
-        "Remote control via smartphone"
+        "Two-way communication",
+        "Motion Detection Alerts",
+        "colored Night Mode",
+        "Support Google Home",
+        "Theft Alarm",
+        "Works With Alexa"
       ],
-      image: "https://images.unsplash.com/photo-1567201080580-bfcc97dae346?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/rohanKashyap/swicthes.jpg?updatedAt=1741002952252"
     },
-    entertainment: {
-      title: "Entertainment Systems",
-      description: "Elevate your entertainment experience with smart audio and video systems that can be controlled with a touch or voice command. Create the perfect ambiance for any occasion.",
+    "Smart Switches": {
+      title: "Smart Switch Board",
+      description: "Wifi Smart Switch Board also supports Voice Assistants like Alexa and OK Google and can be controlled remotely from anywhere.",
       features: [
-        "Multi-room audio systems",
-        "Voice-controlled media playback",
-        "Automated scene setting for movies or music",
-        "Integrated streaming services",
-        "Smart TV and speaker control",
-        "Synchronized lighting and sound"
+        "Wifi Smart Switch Board",
+        "Smart Touch Switches ",
+        "German Technology",
+        "Supports Voice Assistants like Alexa ",
+        "Supports Voice Assistants like OK Google  "
+        ,
+        "Control remotely from anywhere"
       ],
-      image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/rohanKashyap/smartswitches?updatedAt=1741004188484"
     }
   };
 
@@ -202,8 +204,8 @@ const HomeAutomationPage = () => {
                 key={tab}
                 className={`px-6 py-3 rounded-full text-lg transition duration-300 ${
                   activeTab === tab
-                    ? 'bg-amber-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-amber-100'
+                    ? 'bg-amber-600 text-white font-semibold'
+                    : 'bg-white text-gray-700 font-semibold hover:bg-amber-100'
                 }`}
                 onClick={() => setActiveTab(tab)}
               >
@@ -278,18 +280,22 @@ const HomeAutomationPage = () => {
           
           <AnimatedSection>
             <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-video max-w-4xl mx-auto">
-              <img 
-                src="https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                alt="Video Thumbnail" 
+              <video 
+                src="https://ik.imagekit.io/rohanKashyap/homeautomationVideoVIPKitchen.mp4?updatedAt=1741008598291" 
                 className="w-full h-full object-cover"
+                muted
+                autoPlay
+                loop
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+
+              {/* play button */}
+              {/* <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                 <button className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center text-white hover:bg-amber-700 transition-colors duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                   </svg>
                 </button>
-              </div>
+              </div> */}
             </div>
           </AnimatedSection>
         </div>
@@ -300,23 +306,43 @@ const HomeAutomationPage = () => {
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <span className="text-amber-600 font-semibold mb-2 block">AUTHORIZED DISTRIBUTOR</span>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Premium Brand Partners</h2>
+              <span className="text-amber-600 font-semibold mb-2 block">Brand Partners</span>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4"> AUTHORIZED DISTRIBUTOR</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 We are authorized distributors of leading smart home brands, ensuring you get the best products and support.
               </p>
             </div>
           </AnimatedSection>
           
-          <div className="flex flex-wrap justify-center gap-8">
-            {['LECCY', 'GENESIS'].map((brand, index) => (
-              <AnimatedSection key={brand} delay={index * 0.2}>
-                <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-64">
-                  <span className="text-3xl font-bold text-gray-800">{brand}</span>
-                </div>
-              </AnimatedSection>
-            ))}
+
+
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {brands.map((brand, index) => (
+        <AnimatedSection key={brand.name} delay={index * 0.1}>
+          <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32">
+            <div className="flex items-center gap-2">
+              {/* <span className="text-2xl font-bold text-gray-800">{brand.name}</span> */}
+
+              <img
+                src={brand.logo}
+                alt={`${brand.name}-logo`}
+                height={100}
+                width={100}
+                className="object-contain rounded"
+
+              />
+            </div>
           </div>
+        </AnimatedSection>
+      ))}
+    </div>
+
+
+
+
+
+
         </div>
       </section>
       
