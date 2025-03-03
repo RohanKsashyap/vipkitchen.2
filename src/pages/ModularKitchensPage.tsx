@@ -199,11 +199,10 @@ const ModularKitchensPage = () => {
             <AnimatedSection direction="right" className="lg:w-1/2">
               <span className="text-amber-600 font-semibold mb-4 block">3D VISUALIZATION</span>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                See Your Kitchen Before We Build It
+                3d Design Before Booking
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Our advanced 3D design technology allows you to visualize your kitchen in detail before construction begins.
-                Make informed decisions with realistic renderings and virtual walkthroughs.
+                Our  3D design technology allows you to see your kitchen in detail before construction .
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
@@ -254,7 +253,7 @@ const ModularKitchensPage = () => {
               <span className="text-amber-600 font-semibold mb-2 block">TRANSFORMATIONS</span>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Before & After</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See the dramatic transformations we've achieved for our clients.
+                See the  transformations we've achieved for our clients.
                 Slide to compare the before and after results.
               </p>
             </div>
@@ -288,7 +287,7 @@ const ModularKitchensPage = () => {
           <AnimatedSection>
             <div className="text-center mb-16">
               <span className="text-amber-600 font-semibold mb-2 block">OUR PARTNERS</span>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Premium Brand Partnerships</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4"> Brand Partnerships</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 We partner with leading brands to ensure the highest quality products and components for your kitchen.
               </p>

@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Smartphone, Lightbulb, Lock, Thermometer, Speaker, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Smartphone, Lightbulb, Lock, Thermometer, Shield } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { motion } from 'framer-motion';
 
@@ -20,11 +20,7 @@ const automationFeatures = [
     title: "Climate Control",
     description: "Manage your home's temperature remotely, set schedules, and optimize energy usage."
   },
-  {
-    icon: <Speaker size={24} />,
-    title: "Entertainment Systems",
-    description: "Control your audio and video systems with voice commands or smartphone apps."
-  },
+  
   {
     icon: <Shield size={24} />,
     title: "Security Systems",
@@ -107,8 +103,8 @@ const HomeAutomationPage = () => {
                 Control Your Home Anytime, Anywhere
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Transform your living space with cutting-edge home automation technology. 
-                Experience the convenience, security, and efficiency of a fully integrated smart home.
+                Transform your home  with smart home automation technology. 
+                Advance   security, and efficiency of a fully integrated smart home.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {["Remote Access", "Energy Efficient", "Voice Control", "Enhanced Security"].map((feature, index) => (
@@ -138,7 +134,7 @@ const HomeAutomationPage = () => {
               <div className="relative">
                 <img 
                 
-                  src="https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                  src="https://ik.imagekit.io/rohanKashyap/gallery-4.jpg?updatedAt=1741001711749" 
                   alt="Smart Home Automation" 
                   className="rounded-lg shadow-2xl"
                 />
@@ -163,9 +159,9 @@ const HomeAutomationPage = () => {
           <AnimatedSection>
             <div className="text-center mb-16">
               <span className="text-amber-600 font-semibold mb-2 block">SMART FEATURES</span>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive Home Automation</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Smart Home Automation</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our home automation solutions cover every aspect of modern living,
+                 Home automation solutions cover every aspect of modern living,
                 providing convenience, security, and efficiency.
               </p>
             </div>
@@ -334,6 +330,7 @@ const HomeAutomationPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
+
                 to="/contact"
                 className="bg-white text-amber-600 py-3 px-8 rounded-md hover:bg-gray-100 transition duration-300 text-lg font-medium"
               >
