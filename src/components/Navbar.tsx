@@ -73,9 +73,9 @@ const Navbar = () => {
               <Link 
                 key={link.path}
                 to={link.path}
-                className={`relative text-sm font-medium transition-colors duration-300 group ${
+                className={`relative text-sm font-bold transition-colors duration-300 group ${
                   scrolled || location.pathname !== '/' 
-                    ? 'text-gray-700 hover:text-amber-600' 
+                    ? 'text-gray-700 hover:text-amber-600 hover:scale-125 transition-transform duration-300 ' 
                     : 'text-white hover:text-amber-300'
                 }`}
               >
@@ -85,7 +85,7 @@ const Navbar = () => {
             ))}
             
             <a 
-              href="tel:+15551234567" 
+              href="tel:+917009350717" 
               className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
                 scrolled || location.pathname !== '/' 
                   ? 'bg-amber-600 text-white hover:bg-amber-700' 
@@ -133,7 +133,7 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <a 
-                  href="tel:+15551234567" 
+                  href="tel:+917009350717" 
                   className="flex items-center justify-center gap-2 bg-amber-600 text-white py-3 px-6 rounded-md hover:bg-amber-700 transition duration-300 mt-4"
                 >
                   <Phone size={18} />

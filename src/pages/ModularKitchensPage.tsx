@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
@@ -7,7 +6,7 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
 const kitchenFeatures = [
   {
-    title: "Premium Materials",
+    title: "Quality Materials",
     description: "High-quality materials with lifetime warranty for durability and longevity."
   },
   {
@@ -35,7 +34,7 @@ const kitchenTypes = [
     id: "u-shaped",
     title: "U-Shaped Kitchens",
     description: "Ideal for larger spaces, providing maximum storage and work surface area.",
-    image: "https://images.unsplash.com/photo-1556911220-bda9f33a8b1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+    image: "https://ik.imagekit.io/rohanKashyap/6a3286de1af22add6fc61c6f6b9b4951.jpg?updatedAt=1740909890939"
   },
   {
     id: "parallel",
@@ -51,6 +50,28 @@ const kitchenTypes = [
   }
 ];
 
+// partners brand name
+
+interface Brand {
+  name: string;
+  logo: string;
+}
+
+const brands: Brand[] = [
+  {
+    name: "EBCO",
+    logo: "https://ik.imagekit.io/rohanKashyap/ebco-logo?updatedAt=1740934524035",
+  },
+  {
+    name: "ELICA",
+    logo: "https://ik.imagekit.io/rohanKashyap/elica-logo.PNG?updatedAt=1740979564349",
+  },
+  {
+    name: "LECCY & GENESIS",
+    logo: "https://ik.imagekit.io/rohanKashyap/leccy_genesis?updatedAt=1740980539417",
+  },
+];
+
 const ModularKitchensPage = () => {
   return (
     <div className="min-h-screen pt-20">
@@ -59,12 +80,12 @@ const ModularKitchensPage = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <AnimatedSection direction="left" className="lg:w-1/2">
-              <span className="text-amber-600 font-semibold mb-4 block">PREMIUM MODULAR KITCHENS</span>
+              <span className="text-amber-600 font-semibold mb-4 block"> MODULAR KITCHENS</span>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Lifetime Warranty Modular Kitchens
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Experience the perfect blend of functionality, aesthetics, and durability with our premium modular kitchens. 
+                Experience the perfect blend of functionality, aesthetics, and durability with our  modular kitchens. 
                 Designed to last a lifetime with our exclusive warranty.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -132,9 +153,8 @@ const ModularKitchensPage = () => {
             <div className="text-center mb-16">
               <span className="text-amber-600 font-semibold mb-2 block">KITCHEN LAYOUTS</span>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Your Perfect Kitchen Style</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto ">
                 We offer a variety of kitchen layouts to suit different spaces and preferences.
-                Each design is customized to maximize functionality and aesthetic appeal.
               </p>
             </div>
           </AnimatedSection>
@@ -243,8 +263,8 @@ const ModularKitchensPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <AnimatedSection direction="left">
               <BeforeAfterSlider 
-                beforeImage="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                afterImage="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                beforeImage="https://ik.imagekit.io/rohanKashyap/Feinmann-CulinaryCouture-Brody-ChestnutHillMa-After-06.jpg?updatedAt=1740983259966"
+                afterImage="https://ik.imagekit.io/rohanKashyap/Feinmann-CulinaryCouture-Brody-ChestnutHillMa-After-02.jpg?updatedAt=1740983217559"
                 beforeLabel="Before"
                 afterLabel="After"
               />
@@ -276,14 +296,28 @@ const ModularKitchensPage = () => {
           </AnimatedSection>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {['EBCO', 'ELICA', 'LECCY', 'GENESIS'].map((brand, index) => (
-              <AnimatedSection key={brand} delay={index * 0.1}>
-                <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32">
-                  <span className="text-2xl font-bold text-gray-800">{brand}</span>
-                </div>
-              </AnimatedSection>
-            ))}
+      {brands.map((brand, index) => (
+        <AnimatedSection key={brand.name} delay={index * 0.1}>
+          <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32">
+            <div className="flex items-center gap-2">
+              {/* <span className="text-2xl font-bold text-gray-800">{brand.name}</span> */}
+              <img
+                src={brand.logo}
+                alt={`${brand.name}-logo`}
+                height={100}
+                width={100}
+                className="object-contain rounded"
+
+              />
+            </div>
           </div>
+        </AnimatedSection>
+      ))}
+    </div>
+
+
+
+
         </div>
       </section>
       

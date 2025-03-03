@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { ArrowRight, CheckCircle2, ChefHat, Home, Lightbulb } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChefHat, Home, Lightbulb,ShieldCheck,Sparkles } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import AnimatedSection from '../components/AnimatedSection';
 import ThreeDModel from '../components/ThreeDModel';
@@ -78,19 +78,6 @@ const guarantee=[
 }
 
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -263,8 +250,8 @@ const HomePage = () => {
                 </div>
 
                <h3 className="text-2xl font-bold text-gray-900 mb-4">Home Automation</h3>
-                <p className="text-gray-600 mb-6">
-                  Cutting-edge home automation solutions for a smarter, more convenient living experience.
+                <p className="text-gray-600 mb-6 capitalize">
+                  home automation solutions for a smarter, more convenient living experience.
                 </p>
 
                 <ul className="space-y-3 mb-8">
@@ -297,12 +284,12 @@ const HomePage = () => {
 <AnimatedSection delay={0.3} direction="up">
               <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
-                  <Lightbulb className="text-amber-600" size={32} />
+                  <Sparkles className="text-amber-600" size={32} />
                 </div>
 
                <h3 className="text-2xl font-bold text-gray-900 mb-4">2D & 3D Design</h3>
-                <p className="text-gray-600 mb-6">
-                  Cutting-edge home automation solutions for a smarter, more convenient living experience.
+                <p className="text-gray-600 mb-6 capitalize">
+                Customisation According to Space & Requirements
                 </p>
                 <ul className="space-y-3 mb-8">
         {_2d_3d.map((item, index) => (
@@ -333,12 +320,12 @@ const HomePage = () => {
             <AnimatedSection delay={0.3} direction="up">
               <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
-                  <Lightbulb className="text-amber-600" size={32} />
+                  <ShieldCheck className="text-amber-600" size={32} />
                 </div>
 
                <h3 className="text-2xl font-bold text-gray-900 mb-4">Guarantee & Warranty and After Service</h3>
-                <p className="text-gray-600 mb-6">
-                  Cutting-edge home automation solutions for a smarter, more convenient living experience.
+                <p className="text-gray-600 mb-6 capitalize">
+                 Lifetime Warranty and after service
                 </p>
                 <ul className="space-y-3 mb-8">
         {guarantee.map((item, index) => (
@@ -366,7 +353,7 @@ const HomePage = () => {
                   ) : (
                     // If object contains text & nestedItems
                     <li className="mt-2">
-                      <span className="font-medium">{e.text}</span>
+                      <span className="font-bold">{e.text}</span>
                       <ul className="ml-6 mt-1 space-y-1">
                         {e.nestedItems.map((nestedItem, nestedIndex) => (
                           <li key={nestedIndex} className="flex items-start">
@@ -409,10 +396,9 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <AnimatedSection direction="left" className="lg:w-1/2">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Experience Your Space in 3D Before We Build</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6"> 3D Design Before  Booking</h2>
               <p className="text-xl text-gray-600 mb-8">
-                Our advanced 3D visualization technology allows you to see your dream space before construction begins.
-                Make informed decisions with realistic renderings and virtual walkthroughs.
+                
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
@@ -429,8 +415,8 @@ const HomePage = () => {
                     <span className="text-amber-600 font-bold">2</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">3D Visualization</h3>
-                    <p className="text-gray-600">Realistic 3D renderings that bring your vision to life.</p>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">3D Design</h3>
+                    <p className="text-gray-600">Real 3D Design Of Your Interior.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -438,7 +424,7 @@ const HomePage = () => {
                     <span className="text-amber-600 font-bold">3</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Virtual Walkthrough</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Customisation According Space & Requirements </h3>
                     <p className="text-gray-600">Interactive experience to explore your future space.</p>
                   </div>
                 </div>
@@ -492,16 +478,16 @@ const HomePage = () => {
       <section className="py-20 bg-amber-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
-            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
+            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Kitchen & Interior?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Book a free consultation with our design experts and take the first step towards your dream home.
+              Book a free call with our design experts and take the first step towards your dream home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/contact"
                 className="bg-white text-amber-600 py-3 px-8 rounded-md hover:bg-gray-100 transition duration-300 text-lg font-medium"
               >
-                Book a Free Consultation
+                Book a Free call
               </Link>
               <Link 
                 to="/projects"

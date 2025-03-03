@@ -27,14 +27,14 @@ const FloatingCTA = () => {
             className="flex flex-col gap-4 mb-4"
           >
             <a
-              href="tel:+15551234567"
+              href="tel:+917009350717"
               className="flex items-center gap-2 bg-amber-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-amber-700 transition duration-300"
             >
               <Phone size={18} />
               <span>Call Us</span>
             </a>
             <a
-              href="https://wa.me/15551234567"
+              href="https://wa.me/917009350717"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-green-700 transition duration-300"

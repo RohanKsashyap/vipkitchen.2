@@ -22,7 +22,7 @@ const projects = [
     id: 'smart-home-integration',
     title: 'Complete Smart Home Integration',
     category: 'Home Automation',
-    image: 'https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/homeautomation-home-vipkitchen.JPG?updatedAt=1740842381750',
     description: 'Comprehensive home automation system with integrated lighting, security, and appliance control.'
   },
   {
@@ -57,14 +57,14 @@ const projects = [
     id: 'compact-kitchen-solution',
     title: 'Compact Kitchen Solution',
     category: 'Modular Kitchen',
-    image: 'https://images.unsplash.com/photo-1556911220-bda9f33a8b1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/55c0b753aaa9ed86074493ca6b47b108.jpg?updatedAt=1740908615490',
     description: 'Space-efficient kitchen design that maximizes functionality in a compact area.'
   },
   {
     id: 'smart-security-system',
     title: 'Comprehensive Security System',
     category: 'Home Automation',
-    image: 'https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/cc293f6055c1647043b7c11caa3c3775.jpg?updatedAt=1740908763726',
     description: 'Advanced security system with cameras, smart locks, and real-time monitoring.'
   }
 ];
@@ -88,7 +88,7 @@ const ProjectsPage = () => {
           <AnimatedSection>
             <h1 className="text-5xl font-bold mb-6">Our Projects Portfolio</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Explore our showcase of premium kitchens, interiors, and smart home installations.
+              Explore our showcase of Modular kitchens, interiors, and smart home installations.
               Each project reflects our commitment to quality, innovation, and client satisfaction.
             </p>
           </AnimatedSection>
