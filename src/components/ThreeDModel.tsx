@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef,useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {   Environment, PresentationControls } from '@react-three/drei';
 import { Mesh } from 'three';
@@ -61,18 +61,27 @@ const KitchenModel = () => {
 
 interface ThreeDModelProps {
   modelType?: 'kitchen' | 'interior' | 'automation';
+  onLoad?: () => void;
 }
 
-const ThreeDModel: React.FC<ThreeDModelProps> = ({ modelType = 'kitchen' }) => {
+const ThreeDModel: React.FC<ThreeDModelProps> = ({ modelType = 'kitchen' ,onLoad}) => {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: false
   });
+  useEffect(() => {
+    // Simulate a model loading process
+    setTimeout(() => {
+      if (onLoad) onLoad(); // ✅ Call onLoad when the model finishes loading
+    }, 2000); // Simulating 2 seconds load time
+  }, [onLoad]);
+
+
 
   return (
     <div ref={ref} className="w-full h-[500px] rounded-xl overflow-hidden shadow-2xl">
       {inView && (
-        <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+        <Canvas camera={{ position: [0, 0, 5], fov: 50 }} >
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
           <PresentationControls

@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import ThreeDModel from '../components/ThreeDModel';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
-const kitchenFeatures = [
+ const kitchenFeatures = [
   {
     title: "Quality Materials",
     description: "High-quality materials with lifetime warranty for durability and longevity."
@@ -188,62 +187,7 @@ const ModularKitchensPage = () => {
         </div>
       </section>
       
-      {/* 3D Design Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <AnimatedSection direction="left" className="lg:w-1/2">
-              <ThreeDModel modelType="kitchen" />
-            </AnimatedSection>
-            
-            <AnimatedSection direction="right" className="lg:w-1/2">
-              <span className="text-amber-600 font-semibold mb-4 block">3D VISUALIZATION</span>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                3d Design Before Booking
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Our  3D design technology allows you to see your kitchen in detail before construction .
-              </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                    <span className="text-amber-600 font-bold">1</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Detailed Measurements</h3>
-                    <p className="text-gray-600">Precise measurements of your space for accurate planning.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                    <span className="text-amber-600 font-bold">2</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Custom 3D Design</h3>
-                    <p className="text-gray-600">Personalized 3D models based on your preferences and requirements.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                    <span className="text-amber-600 font-bold">3</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Virtual Experience</h3>
-                    <p className="text-gray-600">Interactive walkthrough of your future kitchen.</p>
-                  </div>
-                </div>
-              </div>
-              <Link 
-                to="/design"
-                className="inline-flex items-center gap-2 bg-amber-600 text-white py-3 px-8 rounded-md hover:bg-amber-700 transition duration-300"
-              >
-                <span>Learn More About 3D Design</span>
-                <ArrowRight size={20} />
-              </Link>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
+      
       
       {/* Before & After */}
       <section className="py-20 bg-white">

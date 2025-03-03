@@ -10,7 +10,9 @@ import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 import FloatingCTA from './components/FloatingCTA';
 import ScrollToTop from './components/ScrollToTop';
-
+import AboutUsPage from './pages/AboutUsPage';
+import DesignPage from './pages/designPage';
+import Interior from './pages/Interior';
 function App() {
   useEffect(() => {
     // Initialize smooth scrolling
@@ -49,6 +51,10 @@ function App() {
           <Route path="/home-automation" element={<HomeAutomationPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/design" element={<DesignPage />} />
+          <Route path="/interior-designing" element={<Interior />} />
+
         </Routes>
         <FloatingCTA />
         <Footer />
