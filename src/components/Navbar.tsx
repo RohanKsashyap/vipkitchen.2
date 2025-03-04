@@ -46,105 +46,104 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center ">
-          <Link to="/" className="flex items-center">
-
-
-{/* logo vipKitchen */}
-
-            <img 
+  <div className="container mx-auto px-4">
+    <div className="flex justify-between items-center ">
+      
+      {/* Logo on Leftmost */}
+        <Link to="/">
+          <img 
             alt="Vip Kitchen"
-                src="https://ik.imagekit.io/rohanKashyap/logo.jpg?updatedAt=1740838077627"
-                width={70}
-                height={80}
-                className="rounded-lg shadow-md "
-            
-            
-            />
+            src="https://ik.imagekit.io/rohanKashyap/logo.jpg?updatedAt=1740838077627"
+            width={80}
+            height={80}
+            className="rounded-lg shadow-md "
+          />
+        </Link>
 
+      {/* Title */}
+      <span className={`text-2xl font-bold transition-colors duration-300 ${scrolled || location.pathname !== '/' ? 'text-amber-800' : 'text-white'}`}>
+        VIP Kitchen & Interiors
+      </span>
 
-            <span className={`text-2xl font-bold transition-colors duration-300 ${scrolled || location.pathname !== '/' ? 'text-amber-800' : 'text-white'}`}>VIP Kitchen & Interiors</span>
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex items-center space-x-6 ml-auto">  
+        {navLinks.map((link) => (
+          <Link 
+            key={link.path}
+            to={link.path}
+            className={`relative text-sm font-bold transition-colors duration-300 group ${
+              scrolled || location.pathname !== '/' 
+                ? 'text-gray-700 hover:text-amber-600 hover:scale-125 transition-transform duration-300 ' 
+                : 'text-white hover:text-amber-300'
+            }`}
+          >
+            {link.name}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-6">
+        ))}
+        
+        <a 
+          href="tel:+917009350717" 
+          className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
+            scrolled || location.pathname !== '/' 
+              ? 'bg-amber-600 text-white hover:bg-amber-700' 
+              : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
+          }`}
+        >
+          <Phone size={16} />
+          <span>Call Us</span>
+        </a>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden ml-auto">
+        <button 
+          onClick={toggleMenu} 
+          className={`transition-colors duration-300 ${
+            scrolled || location.pathname !== '/' ? 'text-gray-700' : 'text-white'
+          }`}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  {/* Mobile Menu */}
+  <AnimatePresence>
+    {isMenuOpen && (
+      <motion.div 
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className="lg:hidden bg-white shadow-lg overflow-hidden"
+      >
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
-              <Link 
+              <Link
                 key={link.path}
                 to={link.path}
-                className={`relative text-sm font-bold transition-colors duration-300 group ${
-                  scrolled || location.pathname !== '/' 
-                    ? 'text-gray-700 hover:text-amber-600 hover:scale-125 transition-transform duration-300 ' 
-                    : 'text-white hover:text-amber-300'
-                }`}
+                className="text-gray-700 hover:text-amber-600 transition-colors duration-300 py-2 border-b border-gray-100"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            
             <a 
               href="tel:+917009350717" 
-              className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-                scrolled || location.pathname !== '/' 
-                  ? 'bg-amber-600 text-white hover:bg-amber-700' 
-                  : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
-              }`}
+              className="flex items-center justify-center gap-2 bg-amber-600 text-white py-3 px-6 rounded-md hover:bg-amber-700 transition duration-300 mt-4"
             >
-              <Phone size={16} />
-              <span>Call Us</span>
+              <Phone size={18} />
+              <span>Call Us Now</span>
             </a>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button 
-              onClick={toggleMenu} 
-              className={`transition-colors duration-300 ${
-                scrolled || location.pathname !== '/' ? 'text-gray-700' : 'text-white'
-              }`}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
         </div>
-      </div>
-      
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white shadow-lg overflow-hidden"
-          >
-            <div className="container mx-auto px-4 py-6">
-              <div className="flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className="text-gray-700 hover:text-amber-600 transition-colors duration-300 py-2 border-b border-gray-100"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <a 
-                  href="tel:+917009350717" 
-                  className="flex items-center justify-center gap-2 bg-amber-600 text-white py-3 px-6 rounded-md hover:bg-amber-700 transition duration-300 mt-4"
-                >
-                  <Phone size={18} />
-                  <span>Call Us Now</span>
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</nav>
+
   );
 };
 

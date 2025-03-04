@@ -285,6 +285,7 @@ const HomeAutomationPage = () => {
                 className="w-full h-full object-cover"
                 muted
                 autoPlay
+                preload='none'
                 loop
               />
 

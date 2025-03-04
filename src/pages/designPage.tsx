@@ -176,7 +176,7 @@ useEffect(() => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {threeDImages.map((image, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
-                <video src={image} autoPlay muted loop className="rounded-lg shadow-lg w-full h-full object-cover" />
+                <video src={image} autoPlay preload='none' muted loop className="rounded-lg shadow-lg w-full h-full object-cover" />
               </AnimatedSection>
             ))}
             
