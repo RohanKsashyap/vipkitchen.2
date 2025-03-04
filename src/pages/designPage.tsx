@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import ThreeDModel from '../components/ThreeDModel';
 import { CheckCircle2 ,ArrowRight,Loader} from 'lucide-react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import {motion} from 'framer-motion'
 
 
 const twoDImages = [
@@ -15,7 +16,7 @@ const threeDImages = [
   "https://ik.imagekit.io/rohanKashyap/af350de3b45c174d1583057bbfcc050b.mp4?updatedAt=1741029847385"
 ];
 
-export const Design = [
+ const Design = [
   {
     title: "2D & 3D Design",
     description: "Look Your Interior in 2D & 3D"
@@ -41,17 +42,46 @@ export const Design = [
 const DesignPage = () => {
 const [loading,setLoading] = useState('true')
 
+
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+  }, 3000); // Hides after 3 seconds
+
+  return () => clearTimeout(timer); // Cleanup
+}, []);
+
+// if (!visible) return null; // Remove heading after 3 sec
+
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
+
        {/* Hero Section */}
        <section className="py-20 bg-amber-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <AnimatedSection direction="left" className="lg:w-1/2">
-              <span className="text-amber-600 font-semibold mb-4 block"> 2D & 3D Design</span>
+              <span className="text-amber-600 font-semibold mb-4 block "> 
+                
+                2D & 3D Design
+                
+                
+                </span>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              2D & 3D Design, Planning & Budget
+              <motion.h1
+
+      className="text-4xl md:text-5xl font-bold text-gray-900 mb-6  "     
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+
+
+
+    >
+      2D & 3D Design, Planning & Budget
+
+    </motion.h1>
+                
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Customisation according to space & requirements
@@ -119,7 +149,13 @@ const [loading,setLoading] = useState('true')
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl font-bold text-gray-900 text-center mb-6">2D Layout Designs</h2>
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-6">
+              
+       
+      2D Layout Designs
+              
+              
+              </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {twoDImages.map((image, index) => (

@@ -37,6 +37,29 @@ body {
   animation: slideUp 0.8s ease-out;
 }
 
+
+/* flicker keyframe */
+
+@keyframes flicker {
+  0% { opacity: 0.95; }
+  50% { opacity: 1; text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #00f; }
+  100% { opacity: 0.95; }
+}
+
+.neon-text {
+  color: #0ff;
+  text-shadow: 0 0 3px #0ff, 0 0 6px #00f, 0 0 12px #00f;
+  animation: flicker 1.5s infinite alternate;
+}
+
+
+
+
+
+
+
+
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
