@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2,ArrowRight, Crown, Compass} from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 
 const aboutFeatures = [
@@ -23,23 +23,11 @@ const aboutFeatures = [
 
 const teamMembers = [
     {
-      name: "John Doe",
+      name: "Amandeep Sidhu",
       role: "Founder & CEO",
       image: "https://via.placeholder.com/150",
-      bio: "John leads the team with over 10 years of experience in the industry.",
-    },
-    {
-      name: "Jane Smith",
-      role: "Head of Design",
-      image: "https://via.placeholder.com/150",
-      bio: "Jane is a design expert, crafting beautiful and functional spaces.",
-    },
-    {
-      name: "Mike Johnson",
-      role: "Project Manager",
-      image: "https://via.placeholder.com/150",
-      bio: "Mike ensures every project runs smoothly and meets client expectations.",
-    },
+      bio: "Aman leads the team with over 6 years of experience in the industry.",
+    }
   ];
 
 
@@ -80,34 +68,79 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      {/* Meet the Team */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <AnimatedSection>
-            <h2 className="text-4xl font-bold text-gray-900">Meet Our Team</h2>
-            <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
-              Our team consists of skilled professionals passionate about creating dream spaces.
-            </p>
-          </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-            {teamMembers.map((member, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 text-center p-6">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-24 h-24 mx-auto rounded-full mb-4"
-                  />
-                  <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                  <p className="text-amber-600 font-semibold">{member.role}</p>
-                  <p className="text-gray-600 mt-2">{member.bio}</p>
+
+
+
+
+      {/* Ceo & Owner*/}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+
+            <AnimatedSection direction="left" className="lg:w-1/2">
+
+            <div>
+
+            {teamMembers.map((e,index)=>(  
+              
+              <>
+              <h2 key={index} className="text-4xl font-bold text-gray-900 mb-6"> 
+              <span>
+                {e.name}
+                 </span>
+              </h2>
+             
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div className="w-10 h-10rounded-full flex items-center justify-center mr-4 mt-1">
+                  <Crown className="text-amber-600 mr-3 mt-1 flex-shrink-0" size={24} />
+
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{e.role}</h3>
+                    <p className="text-gray-600">He took the initiative with the mindset to change the perespective of community.</p>
+                  </div>
                 </div>
-              </AnimatedSection>
-            ))}
+                <div className="flex items-start">
+                  <div className="w-10 h-10  rounded-full flex items-center justify-center mr-4 mt-1">
+                  <Compass className="text-amber-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                  
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{e.bio}</h3>
+                    <p className="text-gray-600">A remarkable journey,since 2019.Building a large customer base and winning trust.</p>
+                  </div>
+                </div>
+                
+              </div>
+              <Link 
+                to="/design"
+                className="inline-flex items-center gap-2 bg-amber-600 text-white py-3 px-8 rounded-md hover:bg-amber-700 transition duration-300 text-lg font-medium"
+              >
+                <span>Contact For Advantage Of Our Services !! </span>
+                <ArrowRight size={20} />
+              </Link>
+              </>
+              
+              ))}
+           
+           </div>
+            </AnimatedSection>
+            
+            <AnimatedSection direction="right" className="lg:w-1/2">
+<img src="https://ik.imagekit.io/rohanKashyap/761ae13bbc5a70a569fef997f9878ad6.jpg?updatedAt=1741081777362" alt="ceo-image" height={300} width={400}  className='rounded'/>
+          
+            </AnimatedSection>
           </div>
         </div>
       </section>
+
+
+
+
+
 
       {/* CTA Section */}
       <section className="py-20 bg-amber-600 text-white text-center">

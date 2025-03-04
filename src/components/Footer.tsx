@@ -192,7 +192,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; 2008-{new Date().getFullYear()} VIP Kitchen & Interiors. All rights reserved.</p>
+          <p>&copy; 2019-{new Date().getFullYear()} VIP Kitchen & Interiors. All rights reserved.</p>
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-6">
               <li><a href="#" className="text-gray-400 hover:text-amber-500 transition duration-300">Terms</a></li>

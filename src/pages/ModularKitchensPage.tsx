@@ -259,9 +259,6 @@ const ModularKitchensPage = () => {
       ))}
     </div>
 
-
-
-
         </div>
       </section>
       

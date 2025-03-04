@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { CheckCircle2,ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "../components/AnimatedSection";
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
+
 
 const Interior = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -57,7 +59,7 @@ const Interior = () => {
 
 
   return (
-    <div className="bg-white text-gray-900 p-6 md:p-12">
+    <div className="min-h-screen pt-20">
      
        {/* Hero Section */}
        <section className="py-20 bg-amber-50">
@@ -214,6 +216,67 @@ const Interior = () => {
           Get a Free Consultation
         </motion.a>
       </div>
+       {/* Before & After */}
+       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <span className="text-amber-600 font-semibold mb-2 block">TRANSFORMATIONS</span>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Before & After</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                See the  transformations we've achieved for our clients.
+                Slide to compare the before and after results.
+              </p>
+            </div>
+          </AnimatedSection>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <AnimatedSection direction="left">
+              <BeforeAfterSlider 
+                beforeImage="https://ik.imagekit.io/rohanKashyap/Feinmann-CulinaryCouture-Brody-ChestnutHillMa-After-06.jpg?updatedAt=1740983259966"
+                afterImage="https://ik.imagekit.io/rohanKashyap/Feinmann-CulinaryCouture-Brody-ChestnutHillMa-After-02.jpg?updatedAt=1740983217559"
+                beforeLabel="Before"
+                afterLabel="After"
+              />
+            </AnimatedSection>
+            
+            <AnimatedSection direction="right">
+              <BeforeAfterSlider 
+                beforeImage="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                afterImage="https://images.unsplash.com/photo-1556911220-bda9f33a8b1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                beforeLabel="Before"
+                afterLabel="After"
+              />
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+            {/* CTA Section */}
+            <section className="py-20 bg-amber-600 text-white ">
+        <div className="container mx-auto px-4 text-center">
+          <AnimatedSection>
+            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Kitchen & Interior?</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Book a free call with our design experts and take the first step towards your dream home.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to="/contact"
+                className="bg-white text-amber-600 py-3 px-8 rounded-md hover:bg-gray-100 transition duration-300 text-lg font-medium"
+              >
+                Book a Free call
+              </Link>
+              <Link 
+                to="/projects"
+                className="bg-transparent border-2 border-white text-white py-3 px-8 rounded-md hover:bg-white/10 transition duration-300 text-lg font-medium"
+              >
+                Explore Our Projects
+              </Link>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      
     </div>
   );
 };
