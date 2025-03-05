@@ -54,20 +54,26 @@ const kitchenTypes = [
 interface Brand {
   name: string;
   logo: string;
+  link:string;
 }
 
 export const brands: Brand[] = [
   {
     name: "EBCO",
     logo: "https://ik.imagekit.io/rohanKashyap/ebco-logo?updatedAt=1740934524035",
+    link:"https://ebco.in/"
   },
   {
     name: "ELICA",
     logo: "https://ik.imagekit.io/rohanKashyap/elica-logo.PNG?updatedAt=1740979564349",
+    link:"https://www.elicaindia.com/"
+
   },
   {
     name: "LECCY & GENESIS",
     logo: "https://ik.imagekit.io/rohanKashyap/leccy_genesis?updatedAt=1740980539417",
+    link:"https://leccygenesis.com/"
+
   },
 ];
 
@@ -244,15 +250,17 @@ const ModularKitchensPage = () => {
           <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32">
             <div className="flex items-center gap-2">
               {/* <span className="text-2xl font-bold text-gray-800">{brand.name}</span> */}
-
+<Link to={`${brand.link}`}>
               <img
                 src={brand.logo}
                 alt={`${brand.name}-logo`}
+                
                 height={100}
                 width={100}
                 className="object-contain rounded"
 
               />
+              </Link>
             </div>
           </div>
         </AnimatedSection>
