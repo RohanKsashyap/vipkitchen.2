@@ -69,7 +69,7 @@ const Navbar = () => {
       </span>
 
       {/* Desktop Menu */}
-      <div className="hidden lg:flex items-center space-x-6 ml-70 -mr-36">  
+      <div className="hidden lg:flex items-center space-x-6 ">  
         {navLinks.map((link) => (
           <Link 
             key={link.path}

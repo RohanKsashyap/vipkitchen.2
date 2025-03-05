@@ -6,6 +6,19 @@ html {
   scroll-behavior: smooth;
 }
 
+main {
+  overflow-x: hidden;
+}
+html, body {
+  zoom: 1 !important;
+  /* transform: scale(1) !important; */
+  overflow-x: hidden;
+}
+
+
+
+
+
 body {
   font-family: 'Inter', sans-serif;
   @apply text-gray-700;

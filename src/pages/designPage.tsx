@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import ThreeDModel from '../components/ThreeDModel';
-import { CheckCircle2 ,ArrowRight,Loader} from 'lucide-react';
-import { useState,useEffect } from 'react';
+import { CheckCircle2 ,ArrowRight} from 'lucide-react';
+import { useEffect } from 'react';
 import {motion} from 'framer-motion'
 
 
@@ -40,7 +40,6 @@ const threeDImages = [
 
 
 const DesignPage = () => {
-const [loading,setLoading] = useState('true')
 
 
 
@@ -191,11 +190,9 @@ useEffect(() => {
             {/*3d model  */}
             <AnimatedSection direction="left" className="lg:w-1/2">
 
-{loading?<><Loader/>loading...</>:(
 
-<ThreeDModel modelType="kitchen" onLoad={()=>{setLoading('false')}} />
+<ThreeDModel modelType="kitchen"  />
 
-)}
             </AnimatedSection>
             
             <AnimatedSection direction="right" className="lg:w-1/2">

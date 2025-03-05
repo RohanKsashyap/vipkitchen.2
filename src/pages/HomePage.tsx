@@ -110,7 +110,7 @@ const featuredProjects = [
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       {/* Hero Section */}
       <HeroSlider />
       
