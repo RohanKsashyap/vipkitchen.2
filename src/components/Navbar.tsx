@@ -45,28 +45,31 @@ const Navbar = () => {
   ];
 
   return (
+    
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'}`}>
-  <div className="container mx-auto px-4">
+       
+  <div className="container ml-0 px-4">
+
     <div className="flex justify-between items-center ">
       
-      {/* Logo on Leftmost */}
-        <Link to="/">
+    <Link to="/">
           <img 
             alt="Vip Kitchen"
             src="https://ik.imagekit.io/rohanKashyap/logo.jpg?updatedAt=1740838077627"
             width={80}
             height={80}
-            className="rounded-lg shadow-md "
+            className="rounded-lg shadow-md  "
+            
           />
         </Link>
 
       {/* Title */}
-      <span className={`text-2xl font-bold transition-colors duration-300 ${scrolled || location.pathname !== '/' ? 'text-amber-800' : 'text-white'}`}>
+      <span className={`text-xl font-bold transition-colors duration-300 ml-10 ${scrolled || location.pathname !== '/' ? 'text-amber-800' : 'text-white'}`}>
         VIP Kitchen & Interiors
       </span>
 
       {/* Desktop Menu */}
-      <div className="hidden lg:flex items-center space-x-6 ml-auto">  
+      <div className="hidden lg:flex items-center space-x-6 ml-70 -mr-36">  
         {navLinks.map((link) => (
           <Link 
             key={link.path}
