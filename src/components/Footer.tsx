@@ -1,7 +1,74 @@
 import { Link } from 'react-router-dom';
 import {  Instagram, Facebook, MessageCircle, Mail, Phone, MapPin, ArrowRight, Clock } from 'lucide-react';
+import {toast} from 'react-toastify'
+
+
+
 
 const Footer = () => {
+
+
+//handles sumbit here
+
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  message: string;
+}
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const formData: FormData = {
+    name: (document.getElementById("name") as HTMLInputElement).value,
+    phone: (document.getElementById("phone") as HTMLInputElement).value,
+    email: (document.getElementById("email") as HTMLInputElement).value,
+    service: (document.getElementById("service") as HTMLSelectElement).value,
+    message: (document.getElementById("message") as HTMLTextAreaElement).value,
+  };
+
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data: { success: boolean; message?: string } = await response.json();
+    if (data.success) {
+      toast.success("Message sent successfully!");
+    } else {
+      toast.error(data.message || "Failed to send message.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    toast.error("Something went wrong.");
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 pt-16 pb-8">
@@ -13,53 +80,77 @@ const Footer = () => {
               Get in touch with us s for a free consultation and bring your dream design to life.
             </p>
             
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-white"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-white"
-                    placeholder="Enter your number"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-white"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
-                <textarea 
-                  id="message" 
-                  rows={4}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-white"
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
-              <button 
-                type="submit" 
-                className="bg-amber-600 text-white py-3 px-8 rounded-md hover:bg-amber-700 transition duration-300 flex items-center gap-2"
-              >
-                <span>Get Free Consultation</span>
-                <ArrowRight size={16} />
-              </button>
-            </form>
+
+
+{/* form section */}
+<form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Your Name</label>
+                      <input 
+                        type="text" 
+                        id="name" 
+                        className="w-full px-4 py-3 border bg-gray-800 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        id="phone" 
+                        className="w-full px-4 py-3 border bg-gray-800  border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        placeholder="Your Number"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email Address</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      className="w-full px-4 py-3 border bg-gray-800 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-medium text-white mb-2">Service Interested In</label>
+                    <select 
+                      id="service" 
+                      className="w-full px-4 py-3 border bg-gray-800 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    >
+                      <option value="">Select a Service</option>
+                      <option value="modular-kitchen">Modular Kitchen</option>
+                      <option value="interior-design">Interior Design</option>
+                      <option value="home-automation">Home Automation</option>
+                      <option value="3d-design">2D & 3D Design</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Your Message</label>
+                    <textarea 
+                      id="message" 
+                      rows={5}
+                      className="w-full px-4 py-3 border bg-gray-800 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      placeholder="Tell us about your project requirements..."
+                    ></textarea>
+                  </div>
+                  <button 
+                    type="submit" 
+                    className="bg-amber-600 text-white py-3 px-8 rounded-md hover:bg-amber-700 transition duration-300 flex items-center gap-2"
+                  >
+                    <ArrowRight size={18} />
+                    <span>Send Message</span>
+                  </button>
+                </form>
+
+
+
+{/* form end */}
+
+
+
           </div>
           
           <div className="flex flex-col justify-between">
@@ -132,8 +223,7 @@ const Footer = () => {
                   </a>
                 </a>
                 <a href="#" className="bg-gray-800 p-2 rounded-full text-white hover:bg-amber-600 transition duration-300">
-                <a href="https://wa.me/917009350717?text=Hello%20there!%20I%20found%20you%20on%20your%20website
-">
+                <a href="https://wa.me/917009350717?text=Hello%20there!%20I%20found%20you%20on%20your%20website">
                 <MessageCircle size={20}  />
 
                     

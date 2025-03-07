@@ -1,18 +1,6 @@
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-
-
-
-
-
-
-
-
-
-
-
-
-
+import {toast} from 'react-toastify'
 
 
 const ContactPage = () => {
@@ -27,9 +15,47 @@ const ContactPage = () => {
     }
 ];
 
+//handles sumbit here
 
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  message: string;
+}
 
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
+  const formData: FormData = {
+    name: (document.getElementById("name") as HTMLInputElement).value,
+    phone: (document.getElementById("phone") as HTMLInputElement).value,
+    email: (document.getElementById("email") as HTMLInputElement).value,
+    service: (document.getElementById("service") as HTMLSelectElement).value,
+    message: (document.getElementById("message") as HTMLTextAreaElement).value,
+  };
+
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data: { success: boolean; message?: string } = await response.json();
+    if (data.success) {
+      toast.success("Message sent successfully!");
+    } else {
+      toast.error(data.message || "Failed to send message.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    toast.error("Something went wrong.");
+  }
+};
 
   return (
     <div className="min-h-screen pt-20">
@@ -50,7 +76,10 @@ const ContactPage = () => {
             <AnimatedSection direction="left">
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                <form className="space-y-6">
+
+{/* form section */}
+
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
@@ -111,6 +140,11 @@ const ContactPage = () => {
                     <span>Send Message</span>
                   </button>
                 </form>
+
+
+{/* form end  */}
+
+
               </div>
             </AnimatedSection>
             

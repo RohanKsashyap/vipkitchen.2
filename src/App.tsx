@@ -13,6 +13,10 @@ import ScrollToTop from './components/ScrollToTop';
 import AboutUsPage from './pages/AboutUsPage';
 import DesignPage from './pages/designPage';
 import Interior from './pages/Interior';
+import { ToastContainer } from 'react-toastify';
+
+
+
 function App() {
   useEffect(() => {
     // Initialize smooth scrolling
@@ -59,6 +63,7 @@ function App() {
         <FloatingCTA />
         <Footer />
       </div>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false}/>
     </Router>
   );
 }
