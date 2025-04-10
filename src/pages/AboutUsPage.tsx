@@ -116,7 +116,7 @@ const AboutUsPage = () => {
                 
               </div>
               <Link 
-                to="/design"
+                to="/contact"
                 className="inline-flex items-center gap-2 bg-amber-600 text-white py-3 px-8 rounded-md hover:bg-amber-700 transition duration-300 text-lg font-medium"
               >
                 <span>Contact For Advantage Of Our Services !! </span>

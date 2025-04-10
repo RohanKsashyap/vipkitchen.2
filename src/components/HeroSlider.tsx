@@ -16,11 +16,6 @@ const slides: Slide[] = [
     id: 1,
     title: "Modular Kitchens",
     subtitle: "Kicthen Manufacturing & Installation (Lifetime Warranty)",
-
-
-
-
-
     image: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
     link: "/modular-kitchens"
   },
@@ -42,15 +37,15 @@ const slides: Slide[] = [
     id: 4,
     title: "2D & 3D Design",
     subtitle: "Customisation According to Space & Requirements",
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/home-automation"
+    image: "https://ik.imagekit.io/rohanKashyap/i-2D-3D.jpg?updatedAt=1743230839456",
+    link: "/design"
   },
   {
     id: 5,
     title: "Guarantee & Warranty and After Service",
     subtitle: "Termite (ਸਿਉਂਕ) & Borer Proof (Lifetime Warranty)",
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/home-automation"
+    image: "https://ik.imagekit.io/rohanKashyap/guaranteeimage.jpg?updatedAt=1743355153454",
+    link: "/"
   }
 
 
