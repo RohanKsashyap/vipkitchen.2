@@ -190,8 +190,7 @@ useEffect(() => {
             {/*3d model  */}
             <AnimatedSection direction="left" className="lg:w-1/2">
 
-
-<ThreeDModel modelType="kitchen"  />
+            <img src='https://ik.imagekit.io/rohanKashyap/a3f150568b0bf3dd5a7d16e10fdde453.jpg?updatedAt=1741028554637' alt="2D Kitchen Design" className="rounded-lg shadow-lg w-full h-full object-cover" />
 
             </AnimatedSection>
             

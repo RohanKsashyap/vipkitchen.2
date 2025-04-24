@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import ProjectCard from '../components/ProjectCard';
@@ -8,14 +8,14 @@ const projects = [
     id: 'modern-kitchen-makeover',
     title: 'Modern Kitchen Makeover',
     category: 'Modular Kitchen',
-    image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0013.jpg?updatedAt=1745427303293',
     description: 'Complete transformation of an outdated kitchen into a modern culinary haven with smart appliances and premium finishes.'
   },
   {
     id: 'luxury-apartment-interior',
     title: 'Luxury Apartment Interior',
     category: 'Interior Design',
-    image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0005.jpg?updatedAt=1745427302009',
     description: 'Bespoke interior design for a high-end apartment with custom furniture and elegant finishes.'
   },
   {
@@ -29,14 +29,14 @@ const projects = [
     id: 'contemporary-villa-design',
     title: 'Contemporary Villa Design',
     category: 'Interior Design',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0007.jpg?updatedAt=1745427302013',
     description: 'Complete interior design for a contemporary villa, featuring open spaces and luxurious finishes.'
   },
   {
     id: 'minimalist-kitchen',
     title: 'Minimalist Kitchen Design',
     category: 'Modular Kitchen',
-    image: 'https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0011.jpg?updatedAt=1745427300848',
     description: 'Clean, minimalist kitchen design with high-end appliances and sleek cabinetry.'
   },
   {
@@ -50,14 +50,14 @@ const projects = [
     id: 'traditional-modern-fusion',
     title: 'Traditional-Modern Fusion',
     category: 'Interior Design',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0009.jpg?updatedAt=1745427301776',
     description: 'Interior design that blends traditional elements with modern aesthetics for a timeless appeal.'
   },
   {
     id: 'compact-kitchen-solution',
     title: 'Compact Kitchen Solution',
     category: 'Modular Kitchen',
-    image: 'https://ik.imagekit.io/rohanKashyap/55c0b753aaa9ed86074493ca6b47b108.jpg?updatedAt=1740908615490',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0010.jpg?updatedAt=1745427299581',
     description: 'Space-efficient kitchen design that maximizes functionality in a compact area.'
   },
   {

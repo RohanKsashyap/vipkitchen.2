@@ -89,14 +89,14 @@ const featuredProjects = [
     id: 'modern-kitchen-makeover',
     title: 'Modular Kitchen Makeover',
     category: 'Modular Kitchen',
-    image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0008.jpg?updatedAt=1745427301423',
     description: 'Complete transformation of an outdated kitchen into a modern modular kitchen.'
   },
   {
     id: 'luxury-apartment-interior',
     title: 'Room Interior Design',
     category: 'Interior Design',
-    image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0014.jpg?updatedAt=1745427304651',
     description: ' Interior design according to requirement with custom furniture  finishes.'
   },
   {
@@ -439,7 +439,7 @@ const HomePage = () => {
             </AnimatedSection>
             
             <AnimatedSection direction="right" className="lg:w-1/2">
-              <ThreeDModel />
+            <img src='https://ik.imagekit.io/rohanKashyap/a3f150568b0bf3dd5a7d16e10fdde453.jpg?updatedAt=1741028554637' alt="2D Kitchen Design" className="rounded-lg shadow-lg w-full h-full object-cover" />
             </AnimatedSection>
           </div>
         </div>

@@ -15,19 +15,19 @@ const Interior = () => {
       id: "l-shaped",
       title: "L-Shaped Kitchens",
       description: "Perfect for medium to large spaces, offering ample counter space and storage.",
-      image: "https://ik.imagekit.io/rohanKashyap/57661dc80bebda3dfe946c070ee8ed13.jpg?updatedAt=1741065790182"
+      image: "https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0014.jpg?updatedAt=1745427304651"
     },
     {
       id: "u-shaped",
       title: "U-Shaped Kitchens",
       description: "Ideal for larger spaces, providing maximum storage and work surface area.",
-      image: "https://ik.imagekit.io/rohanKashyap/d2947784ccc93154573a4ea919dbc366.jpg?updatedAt=1741065838241"
+      image: "https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0009.jpg?updatedAt=1745427301776"
     },
     {
       id: "parallel",
       title: "Parallel Kitchens",
       description: "Perfect for narrow spaces, with efficient workflow between opposite counters.",
-      image: "https://ik.imagekit.io/rohanKashyap/30830ce2ea8c5669334a9387e9402f22.jpg?updatedAt=1741065956411"
+      image: "https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0003.jpg?updatedAt=1745427298824"
     },
     {
       id: "island",
@@ -123,7 +123,7 @@ const Interior = () => {
             <AnimatedSection direction="right" className="lg:w-1/2">
               <div className="relative">
                 <img 
-                  src="https://ik.imagekit.io/rohanKashyap/0e41feecda496658d5701500226acf8c.jpg?updatedAt=1741066498635" 
+                  src="https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0004.jpg?updatedAt=1745427301428" 
                   alt="Premium Modular Kitchen" 
                   className="rounded-lg shadow-2xl"
                 />

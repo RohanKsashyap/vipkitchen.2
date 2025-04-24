@@ -23,7 +23,7 @@ const slides: Slide[] = [
     id: 2,
     title: " Interior Design",
     subtitle: "Room Interior Design with 2D & 3D Planning",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    image: "https://ik.imagekit.io/rohanKashyap/VIP-KITCHEN/vipkitchensPhotos/IMG-20250410-WA0014.jpg?updatedAt=1745427304651",
     link: "/interior-designing"
   },
   {
